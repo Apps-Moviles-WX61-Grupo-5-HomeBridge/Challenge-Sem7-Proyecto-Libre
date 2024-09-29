@@ -17,6 +17,7 @@
         <activity
             android:name=".jokes.GenerateJokesActivity"
             android:exported="false" />
+        <activity android:name=".favorite.FavoriteJokesActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

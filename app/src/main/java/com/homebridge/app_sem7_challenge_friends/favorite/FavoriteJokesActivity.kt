@@ -6,10 +6,11 @@ import      androidx.appcompat.app.AppCompatActivity
 import      androidx.recyclerview.widget.LinearLayoutManager
 import      androidx.recyclerview.widget.RecyclerView
 import      com.homebridge.app_sem7_challenge_friends.R
+import com.homebridge.app_sem7_challenge_friends.db.AppDatabase
+import com.homebridge.app_sem7_challenge_friends.models.Joke
 
 
-
-public final class FavoriteJokesActivity : AppCompatActivity(), JokeAdapter.OnItemClickListener
+class FavoriteJokesActivity : AppCompatActivity(), JokeAdapter.OnItemClickListener
 {
     private lateinit var m_Favorites: RecyclerView
 
@@ -25,7 +26,7 @@ public final class FavoriteJokesActivity : AppCompatActivity(), JokeAdapter.OnIt
         this.m_Favorites = findViewById(R.id.favorites_recycler_view)
     }
 
-    protected final override fun onResume(): Unit {
+    override fun onResume(){
         super.onResume()
 
         this.loadJokes { jokes ->
@@ -34,12 +35,19 @@ public final class FavoriteJokesActivity : AppCompatActivity(), JokeAdapter.OnIt
         }
     }
 
-    private final fun loadJokes(
-        onComplete: (List<Joke>) -> Unit
-    ): Unit {
-        //  Code here the DAO thingy.
+    private fun loadJokes(onComplete: (List<Joke>) -> Unit){
+        val dao = AppDatabase.getInstance(this).getDao()
+
+        onComplete(dao.getAll())
     }
-    public final override fun onItemClick(joke: Joke): Unit {
-        //  Code here the DAO thingy.
+    override fun onItemClick(joke: Joke){
+        val dao = AppDatabase.getInstance(this).getDao()
+
+        dao.delete(joke)
+
+        this.loadJokes { jokes ->
+            this.m_Favorites.adapter = JokeAdapter(jokes, this)
+            this.m_Favorites.layoutManager = LinearLayoutManager(this@FavoriteJokesActivity)
+        }
     }
 }

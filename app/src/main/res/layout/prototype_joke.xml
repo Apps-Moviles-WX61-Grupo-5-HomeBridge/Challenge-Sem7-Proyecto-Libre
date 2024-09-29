@@ -18,7 +18,7 @@
         tools:text="joke_category" />
 
     <TextView
-        android:id="@+id/joke_content_text_view"
+        android:id="@+id/joke_setup"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -45,4 +45,13 @@
         android:src="@drawable/favorite_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/joke_delivery"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/joke_setup" />
 </androidx.constraintlayout.widget.ConstraintLayout>

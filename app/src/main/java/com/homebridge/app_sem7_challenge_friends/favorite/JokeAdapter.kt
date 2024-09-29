@@ -8,23 +8,23 @@ import      android.widget.TextView
 import      androidx.recyclerview.widget.RecyclerView.Adapter
 import      androidx.recyclerview.widget.RecyclerView.ViewHolder
 import      com.homebridge.app_sem7_challenge_friends.R
+import com.homebridge.app_sem7_challenge_friends.models.Joke
+import com.squareup.picasso.Picasso
 
 
-
-public final class JokeAdapter(
-    private val jokes: List<Joke>,
-    private val clickListener: OnItemClickListener
-) : Adapter<JokeAdapter.JokeViewHolder>()
+class JokeAdapter(private val jokes: List<Joke>, private val clickListener: OnItemClickListener) : Adapter<JokeAdapter.JokeViewHolder>()
 {
     inner class JokeViewHolder(itemView: View): ViewHolder(itemView)
     {
         private val tvCategory: TextView    = itemView.findViewById(R.id.joke_category_text_view)
-        private val tvContent: TextView     = itemView.findViewById(R.id.joke_content_text_view)
+        private val tvContent: TextView     = itemView.findViewById(R.id.joke_setup)
+        private val tvContenttwo: TextView  = itemView.findViewById(R.id.joke_delivery)
         private val favorite: ImageButton   = itemView.findViewById(R.id.save_to_favorites_button)
 
         fun bind(joke: Joke, clickListener: OnItemClickListener) {
-            tvCategory.text = joke.jokeCategory
-            tvContent.text  = joke.jokeContent
+            tvCategory.text = joke.category
+            tvContent.text  = joke.setup
+            tvContenttwo.text = joke.delivery
 
             favorite.setOnClickListener {
                 clickListener.onItemClick(joke)
