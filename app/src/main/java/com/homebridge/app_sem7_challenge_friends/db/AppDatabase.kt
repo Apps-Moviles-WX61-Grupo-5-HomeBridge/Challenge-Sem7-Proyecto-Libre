@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.homebridge.app_sem7_challenge_friends.models.Joke
 
-@Database(entities = [Joke::class], version = 1)
+@Database(entities = [Joke::class], version = 3)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun getDao(): JokeDao
 
@@ -16,7 +16,7 @@ abstract class AppDatabase: RoomDatabase() {
         fun getInstance(context: Context): AppDatabase {
             if (INSTANCE == null) {
                 INSTANCE = Room
-                    .databaseBuilder(context, AppDatabase::class.java, "jokes.db")
+                    .databaseBuilder(context, AppDatabase::class.java, "jokesv2.db")
                     .allowMainThreadQueries()
                     .build()
             }

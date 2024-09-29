@@ -6,11 +6,13 @@ class JokeApiResponse(
     private var category: String,
     private var setup: String,
     private var delivery: String,
+    private var joke: String
 ) {
     fun toJoke() : Joke {
         return Joke(
             category = category,
             setup =  setup,
-            delivery = delivery)
+            delivery = delivery,
+            joke = joke)
     }
 }

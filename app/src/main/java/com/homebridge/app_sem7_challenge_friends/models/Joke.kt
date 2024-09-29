@@ -13,5 +13,7 @@ data class Joke (
     @ColumnInfo(name = "setup")
     val setup: String?,
     @ColumnInfo(name = "delivery")
-    val delivery: String?
+    val delivery: String?,
+    @ColumnInfo(name = "joke")
+    val joke: String?
 )

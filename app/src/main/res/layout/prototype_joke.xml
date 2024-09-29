@@ -22,7 +22,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/joke_category_text_view"
         tools:text="This is the context of a joke. Use this text box to include any joke you desire. This text is getting as large as possible to make all possible jokes fit inside this text box." />
@@ -54,4 +54,14 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/joke_setup" />
+
+    <TextView
+        android:id="@+id/joke_alone"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/joke_category_text_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>

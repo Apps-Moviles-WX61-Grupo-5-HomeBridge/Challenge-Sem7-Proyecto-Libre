@@ -18,12 +18,14 @@ class JokeAdapter(private val jokes: List<Joke>, private val clickListener: OnIt
     {
         private val tvCategory: TextView    = itemView.findViewById(R.id.joke_category_text_view)
         private val tvContent: TextView     = itemView.findViewById(R.id.joke_setup)
+        private val tvContentJoke: TextView = itemView.findViewById(R.id.joke_alone)
         private val tvContenttwo: TextView  = itemView.findViewById(R.id.joke_delivery)
         private val favorite: ImageButton   = itemView.findViewById(R.id.save_to_favorites_button)
 
         fun bind(joke: Joke, clickListener: OnItemClickListener) {
             tvCategory.text = joke.category
             tvContent.text  = joke.setup
+            tvContentJoke.text = joke.joke
             tvContenttwo.text = joke.delivery
 
             favorite.setOnClickListener {

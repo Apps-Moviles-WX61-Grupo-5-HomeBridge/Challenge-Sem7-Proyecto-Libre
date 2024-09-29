@@ -4,6 +4,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface JokeApi {
-    @GET("/joke/Any")
+    @GET("joke/Any")
     fun getJoke(@Query("amount") amount: Int): Call<ApiResponse>
 }
