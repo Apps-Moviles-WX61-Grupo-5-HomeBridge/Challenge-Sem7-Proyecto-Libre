@@ -1,4 +1,4 @@
-package com.homebridge.app_sem7_challenge_friends
+package com.homebridge.app_sem7_challenge_friends.activities
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
