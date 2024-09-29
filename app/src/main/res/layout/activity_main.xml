@@ -5,36 +5,58 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
+        android:layout_width="309dp"
+        android:layout_height="296dp"
         android:layout_marginStart="47dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="36dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@drawable/joke_logo" />
 
     <Button
-        android:id="@+id/btPeople"
+        android:id="@+id/jokes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="156dp"
         android:layout_marginTop="32dp"
-        android:text="@string/people"
+        android:layout_marginEnd="162dp"
+        android:text="@string/generate_jokes_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
     <Button
-        android:id="@+id/btFavorite"
+        android:id="@+id/favorites_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:text="@string/favorite"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btPeople"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="163dp"
+        android:text="@string/favorite_jokes_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jokes_button" />
+
+    <Button
+        android:id="@+id/exit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="164dp"
+        android:text="@string/exit_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favorites_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

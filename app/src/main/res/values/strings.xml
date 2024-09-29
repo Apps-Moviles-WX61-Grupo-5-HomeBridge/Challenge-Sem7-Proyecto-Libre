@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">app_sem7_challenge_friends</string>
-    <string name="people">People</string>
-    <string name="favorite">Favorite</string>
+    <string name="app_name">Joke</string>
+    <string name="generate_jokes_button">Jokes</string>
+    <string name="favorite_jokes_button">Favorite</string>
+    <string name="exit_button">Exit</string>
+    <string name="generate_button">Generate</string>
+    <string name="amount_text">Amount</string>
 </resources>
